@@ -83,7 +83,7 @@ public class HFileChecker extends Configured implements Tool {
       block = reader.readBlock(offset, -1, /* cacheBlock */ false, /* pread */ false,
         /* isCompaction */ false, /* updateCacheMetrics */ false, null, null);
 
-      System.out.println(toStringHeaderMethod.invoke(null, block.getBufferReadOnly()));
+      System.out.println("toStringHeader(): " + toStringHeaderMethod.invoke(null, block.getBufferReadOnly()));
 
       offset += block.getOnDiskSizeWithHeader();
       System.out.println(block + "\n");
